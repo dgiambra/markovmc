@@ -28,7 +28,13 @@ A Markov Chain Monte Carlo Algorithm
 Features
 --------
 
-* TODO
+* Given a distribution of nodes, this algorithm calculates the most likely graphs to be produced from those nodes based on relative probability.
+* Uses the Metripolis-Hastings Algorithm
+* To use, call markovmc.grapher(x, N, r, T)
+* x: list of tuples representing nodes
+* N: int, number of iterations
+* r & T : int, adjustable Parameters
+* Outputs a list of graphs, each one is the more likely graph of its pair
 
 Credits
 ---------
@@ -37,4 +43,3 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
-

@@ -1,4 +1,22 @@
 def grapher(x, N, r, T):
+    '''This function is a Markoc Chain Monte Carlo Simulator.
+
+    Parameters
+    ----------
+        x : list of tuples
+            cartesian location of nodes
+        N : int
+            number of iterations
+        r : int
+            adjustable parameter
+        T : int
+            adjustable Parameters
+
+    Returns
+    -------
+    graphs : list
+             most likely graphs from each iteration
+    '''
     import networkx as nx
     from random import choice
     import math
@@ -35,11 +53,11 @@ def grapher(x, N, r, T):
                 b_h += 1
         q_h_g = 1/(len(x)*(len(x)-1)/2-b_h)
         q_g_h = 1/(len(x)*(len(x)-1)/2-b_g)
-        #print lines for classical debugging
-        #print(1/(len(x)*(len(x)-1)/2-b_h))
-        #print(len(x))
-        #print(b_h)
-        #print(q_h_g)
+        # print lines for classical debugging
+        # print(1/(len(x)*(len(x)-1)/2-b_h))
+        # print(len(x))
+        # print(b_h)
+        # print(q_h_g)
         aij = fx*q_g_h/q_h_g
         if aij > 1:
             graphs.append(G)
@@ -49,6 +67,21 @@ def grapher(x, N, r, T):
 
 
 def theta(G, r):
+    '''This function calculates the relative probability parameter for a graph.
+       Called in grapher function.
+
+    Parameters
+    ----------
+        G : graph
+            graph to be analyzed
+        r : int
+            adjustable parameter
+
+    Returns
+    -------
+    theta : float
+            parameter for probability calculation
+    '''
     import networkx as nx
     theta = 0
     if not nx.is_connected(G):
