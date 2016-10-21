@@ -61,4 +61,4 @@ class TestMarkovmc(unittest.TestCase):
         self.assertRaises(RuntimeError, lambda: markovmc.theta(G,1))
 
     def test_grapher_out(self):
-        self.assertIsInstance(markovmc.grapher([(0,0),(1,2),(2,2),(3,3),(4,4),(5,5),(6,6)],1,1,1),list)
+        self.assertIsInstance(markovmc.grapher([(0,0),(1,2),(2,2),(3,3),(4,4),(5,5),(6,6)],20,1,1),list)
