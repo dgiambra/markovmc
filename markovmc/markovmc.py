@@ -64,10 +64,10 @@ def grapher(x, N, r, T):
         # print(b_h)
         # print(q_h_g)
         aij = fx*q_g_h/q_h_g
-        print(nx.info(G))
-        print(nx.info(H))
-        print(aij)
-        print(fx)
+        # print(nx.info(G))
+        # print(nx.info(H))
+        # print(aij)
+        # print(fx)
         if aij > 1:
             graphs.append(G)
         else:
