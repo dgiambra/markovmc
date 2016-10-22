@@ -16,6 +16,9 @@ markovmc
 .. image:: https://pyup.io/repos/github/dgiambra/markovmc/shield.svg
      :target: https://pyup.io/repos/github/dgiambra/markovmc/
      :alt: Updates
+     
+.. image:: https://coveralls.io/repos/github/dgiambra/markovmc/badge.svg?branch=develop
+    :target: https://coveralls.io/github/dgiambra/markovmc?branch=develop
 
 
 A Markov Chain Monte Carlo Algorithm
