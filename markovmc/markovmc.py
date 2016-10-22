@@ -1,6 +1,5 @@
 def grapher(x, N, r, T):
     '''This function is a Markoc Chain Monte Carlo Simulator.
-
     Parameters
     ----------
         x : list of tuples
@@ -11,7 +10,6 @@ def grapher(x, N, r, T):
             adjustable parameter
         T : int
             adjustable Parameters
-
     Returns
     -------
     graphs : list
@@ -21,9 +19,16 @@ def grapher(x, N, r, T):
     from random import choice
     import math
     graphs = []
-    G = nx.complete_graph(len(x))
+    G = nx.cycle_graph(len(x))
     for i in list(range(N)):
-        H = G
+        H = nx.Graph()
+        for edge in nx.edges(G):
+            H.add_edge(edge[0], edge[1])
+        for item in H.edges():
+            del_x = x[item[1]-1][0] - x[item[0]-1][0]
+            del_y = x[item[1]-1][1] - x[item[0]-1][1]
+            weight = math.hypot(del_x, del_y)
+            H[item[0]][item[1]]['weight'] = weight
         random_node = choice(G.nodes())
         random_node_2 = choice(G.nodes())
         if random_node == random_node_2:
@@ -59,6 +64,10 @@ def grapher(x, N, r, T):
         # print(b_h)
         # print(q_h_g)
         aij = fx*q_g_h/q_h_g
+        print(nx.info(G))
+        print(nx.info(H))
+        print(aij)
+        print(fx)
         if aij > 1:
             graphs.append(G)
         else:
