@@ -15,7 +15,7 @@ from contextlib import contextmanager
 from click.testing import CliRunner
 
 from markovmc import markovmc
-from markovmc import cli
+
 
 
 
@@ -30,14 +30,14 @@ class TestMarkovmc(unittest.TestCase):
     def test_000_something(self):
         pass
 
-    def test_command_line_interface(self):
-        runner = CliRunner()
-        result = runner.invoke(cli.main)
-        assert result.exit_code == 0
-        assert 'markovmc.cli.main' in result.output
-        help_result = runner.invoke(cli.main, ['--help'])
-        assert help_result.exit_code == 0
-        assert '--help  Show this message and exit.' in help_result.output
+    # def test_command_line_interface(self):
+    #    runner = CliRunner()
+    #    result = runner.invoke(cli.main)
+    #    assert result.exit_code == 0
+    #    assert 'markovmc.cli.main' in result.output
+    #    help_result = runner.invoke(cli.main, ['--help'])
+    #    assert help_result.exit_code == 0
+    #    assert '--help  Show this message and exit.' in help_result.output
 
     def test_theta_out(self):
         import networkx as nx
