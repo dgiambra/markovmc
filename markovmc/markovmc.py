@@ -75,21 +75,12 @@ def grapher(x, N, r, T):
         # print(len(x))
         # print(b_h)
         # print(q_h_g)
-<<<<<<< HEAD
         aij = fx*q_h_g/q_g_h
         # print(nx.info(G))
         # print(nx.info(H))
         #print(aij)
         # print(fx)
         if aij > random():
-=======
-        aij = fx*q_g_h/q_h_g
-        # print(nx.info(G))
-        # print(nx.info(H))
-        # print(aij)
-        # print(fx)
-        if aij > 1:
->>>>>>> master
             graphs.append(G)
         else:
             graphs.append(H)
