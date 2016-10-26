@@ -25,8 +25,8 @@ def grapher(x, N, r, T):
         I = nx.Graph()
         J = nx.Graph()
         for edge in nx.edges(G):
-            H.add_edge(edge[0], edge[1]) # These lines duplicate graphs, simply assigning H=G will cause every modifcation made to G after that point to also Occur in H
-            J.add_edge(edge[0], edge[1]) # Because of this it is neccesary to have two equivalent graphs but not being the same thing
+            H.add_edge(edge[0], edge[1])
+            J.add_edge(edge[0], edge[1])
         for item in H.edges():
             del_x = x[item[1]-1][0] - x[item[0]-1][0]
             del_y = x[item[1]-1][1] - x[item[0]-1][1]
@@ -103,7 +103,7 @@ def topOnePercent(graphs):
             graph_dict[i] += 1
         else:
             graph_dict[i] = 1
-    num = int(len(graph_dict)/100) # one percent
+    num = int(len(graph_dict)/100)
     import operator
     sorted_x = sorted(graph_dict.items(), key=operator.itemgetter(1))
     # print(len(graph_dict))
