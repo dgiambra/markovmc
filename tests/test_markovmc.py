@@ -62,3 +62,15 @@ class TestMarkovmc(unittest.TestCase):
 
     def test_grapher_out(self):
         self.assertIsInstance(markovmc.grapher([(0,0),(1,2),(2,2),(3,3),(4,4),(5,5),(6,6)],20,1,1),list)
+
+    def test_top_one_percent_output(self):
+        self.assertIsInstance(markovmc.topOnePercent(markovmc.grapher([(0,0),(1,2),(2,2),(3,3),(4,4),(5,5),(6,6)],20,1,1)), list)
+
+    def test_expectedDegree_output(self):
+        self.assertIsInstance(markovmc.expectedDegree(markovmc.grapher([(0,0),(1,2),(2,2),(3,3),(4,4),(5,5),(6,6)],20,1,1),0), float)
+
+    def test_expectedNumberofEdges_output(self):
+        self.assertIsInstance(markovmc.expectedNumberofEdges(markovmc.grapher([(0,0),(1,2),(2,2),(3,3),(4,4),(5,5),(6,6)],20,1,1)), float)
+
+    def test_expectedShartedtPathLength(self):
+        self.assertIsInstance(markovmc.expectedShortestPathLength(markovmc.grapher([(0,0),(1,2),(2,2),(3,3),(4,4),(5,5),(6,6)],20,1,1),0,6), float)

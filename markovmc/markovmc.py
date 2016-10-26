@@ -23,7 +23,7 @@ def grapher(x, N, r, T):
     for i in list(range(N)):
         H = nx.Graph()
         I = nx.Graph()
-        J= nx.Graph()
+        J = nx.Graph()
         for edge in nx.edges(G):
             H.add_edge(edge[0], edge[1])
             J.add_edge(edge[0], edge[1])
@@ -95,13 +95,13 @@ def topOnePercent(graphs):
     Returns
     -------
     top_one_percent : list
-                      most likely graphs 
+                      most likely graphs
     '''
     graph_dict = {}
     for i in graphs:
         if i in graph_dict:
             graph_dict[i] += 1
-        else: 
+        else:
             graph_dict[i] = 1
     num = int(len(graph_dict)/100)
     import operator
@@ -120,11 +120,11 @@ def expectedDegree(graphs, node):
                  graphs to be analyzed
         node   : int
                  node to be analyzed
-                
+
     Returns
     -------
         mean : float
-               expected degree 
+               expected degree
     '''
     from statistics import mean
     degreeList = []
@@ -138,12 +138,12 @@ def expectedNumberofEdges(graphs):
     ----------
         graphs : list
                  graphs to be analyzed
-                
+
     Returns
     -------
         mean : float
                expected number of edges
-    ''' 
+    '''
     from statistics import mean
     edges = []
     for i in graphs:
@@ -160,12 +160,12 @@ def expectedShortestPathLength(graphs, node_a, node_b):
                  first node
         node_b : int
                  second node
-                
+
     Returns
     -------
         mean : float
                expected shortest path
-    ''' 
+    '''
     from statistics import mean
     import networkx as nx
     pathList=[]
@@ -173,7 +173,7 @@ def expectedShortestPathLength(graphs, node_a, node_b):
         pathList.append(nx.dijkstra_path_length(i, node_a, node_b))
     return mean(pathList)
 
-    
+
 def theta(G, r):
     '''This function calculates the relative probability parameter for a graph.
        Called in grapher function.
