@@ -130,7 +130,7 @@ def expectedDegree(graphs, node):
     degreeList = []
     for i in graphs:
         degreeList.append(i.degree(node))
-    return mean(degreeList)
+    return float(mean(degreeList))
 
 def expectedNumberofEdges(graphs):
     '''This function determines the expected number of edges for a given set of graphs
@@ -148,7 +148,7 @@ def expectedNumberofEdges(graphs):
     edges = []
     for i in graphs:
         edges.append(i.number_of_edges())
-    return mean(edges)
+    return float(mean(edges))
 
 def expectedShortestPathLength(graphs, node_a, node_b):
     '''This function determines the expected shortest path for a given set of graphs and two nodes
