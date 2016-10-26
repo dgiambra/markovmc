@@ -171,7 +171,7 @@ def expectedShortestPathLength(graphs, node_a, node_b):
     pathList=[]
     for i in graphs:
         pathList.append(nx.dijkstra_path_length(i, node_a, node_b))
-    return mean(pathList)
+    return float(mean(pathList))
 
 
 def theta(G, r):
